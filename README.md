@@ -54,7 +54,7 @@ Sometimes I put binary releases into Releases tab in github, but they maybe outd
 # ... empty line are allowed ....
 
 # serviceName:port      targetIp:targetPort
-# port for service is optional. In fact, this is just Request URI (RFC 2616, Section 5.1) =))
+# port for service is required (you may set to 80). In fact, this is just Request URI (RFC 2616, Section 5.1) =))
 
 # Example
 
@@ -68,5 +68,32 @@ myssh:22 127.0.0.1:22
 # and the last - all powerfull of golang template are here (for-loops, if-else end e.t.c)
 ```
 
+### API
+
+Ofcourse, sometimes files are too bore. We have a HTTP Rest-like API (can be disable by --no-api flag)
+
+#### Add/update
+
+URL: `POST /api/` 
+Body: JSON/XML/Form
+Fields:
+
+* service
+* target
+
+#### Get all items
+
+URL: `GET /api/` 
+Response: json-map, where key - service, and value is target address
+
+#### Remove one
+
+URL: `DELETE /api/:service`
+No response (201)
+
+#### Remove all
+
+URL: `DELETE /api/`
+No response (201)
 
 Goooooooood luck!
