@@ -40,6 +40,10 @@ Sometimes I put binary releases into Releases tab in github, but they maybe outd
 
 `http2tcp [-b binding] <configuration files...>`
 
+### Library:
+
+[See godoc](https://godoc.org/github.com/reddec/http2tcp)
+
 ### Configuration:
 
 
